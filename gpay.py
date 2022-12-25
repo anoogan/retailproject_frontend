@@ -1,1 +1,1 @@
-print("This is commit by Developer working on Gpay changes and branch")
+print("This is commit by Developer working on Gpay")
