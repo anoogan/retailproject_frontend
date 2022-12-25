@@ -25,5 +25,5 @@ steps:
     repository: anoogan1/coit-frontend
     command: 'buildAndPush'
     Dockerfile: './Dockerfile'
-    tags: latest
+    tags: $(Build.BuildId)
     containerRegistry: Docker-hub
