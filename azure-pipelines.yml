@@ -22,7 +22,7 @@ steps:
 
 - task: Docker@2
   inputs:
-    repository: anoogan1/coit-frontend:latest
+    repository: anoogan1/coit-frontend
     command: 'build'
     Dockerfile: './Dockerfile'
     tags: latest
