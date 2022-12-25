@@ -23,6 +23,7 @@ steps:
 - task: Docker@2
   inputs:
     repository: anoogan1/coit-frontend
-    command: 'build'
+    command: 'buildAndPush'
     Dockerfile: './Dockerfile'
     tags: latest
+    containerRegistry: Docker-hub
