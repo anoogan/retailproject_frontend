@@ -19,3 +19,10 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+
+- task: Docker@2
+  inputs:
+    repository: anoogan1/coit-frontend:latest
+    command: 'build'
+    Dockerfile: './Dockerfile'
+    tags: 1.0.2 
