@@ -5,18 +5,23 @@
 
 trigger:
   branches:
-    include:
-    - '*'
+    exclude:
+      - '*'
   tags:
     include:
-    - '*'
-
+    - v2.*
+    exclude:
+    - v2.0
+pr:
+  branches:
+    include:
+      - refs/tags/v2.*
+    exclude:
+      - 'refs/tags/v2.0'
+      - '*'
 pool:
   vmImage: ubuntu-latest
 
-  job: A
-  displayName: 'JobA'
-  condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
 steps:
 - task: NodeTool@0
   inputs:
