@@ -4,19 +4,19 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
+  tags:
+    include:
+    - v*
   branches:
     include:
     - main
-  tags:
-    include:
-    - 'release-*'
 
 pool:
   vmImage: ubuntu-latest
 
   job: A
   displayName: 'JobA'
-  condition: contains(variables['Build.SourceVersionMessage'], 'release-')
+  condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
 steps:
 - task: NodeTool@0
   inputs:
